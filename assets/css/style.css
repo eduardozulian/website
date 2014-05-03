@@ -63,7 +63,7 @@
     /* Carousel base class */
     .carousel {
       margin-bottom: 60px;
-      background-image: url(./images/dayton-top.jpg);
+      background-image: url(../images/dayton-top.jpg);
       background-size: cover;
     }
 
