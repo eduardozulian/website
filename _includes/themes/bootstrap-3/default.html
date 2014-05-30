@@ -1,34 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="{{ ASSET_PATH}}/images/favicon.ico" />
 
-    <title>{{ page.title }}</title>
-    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-    <meta name="author" content="{{ site.author.name }}">
+  <title>{{ page.title }}</title>
+  {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+  <meta name="author" content="{{ site.author.name }}">
 
-    <!-- Enable responsive viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Enable responsive viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap styles -->
-    <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Optional theme -->
-    <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
-    <!-- Sticky Footer -->
-    <link href="{{ ASSET_PATH }}/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
-    
-    <!-- Custom styles -->
-    <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+  <!-- Bootstrap styles -->
+  <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Optional theme -->
+  <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+  <!-- Sticky Footer -->
+  <link href="{{ ASSET_PATH }}/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!-- Custom styles -->
+  <link href="{{ ASSET_PATH }}/css/style.css" rel="stylesheet" type="text/css" media="all">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+      <![endif]-->
 
-    <!-- Fav and touch icons -->
+      <!-- Fav and touch icons -->
     <!-- Update these with your own images
       <link rel="shortcut icon" href="images/favicon.ico">
       <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -43,56 +45,105 @@
   </head>
 
   <body>
+
     <div id="wrap">
-      <nav class="navbar navbar-default" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
-          <ul class="nav navbar-nav">
-            {% assign pages_list = site.pages %}
-            {% assign group = 'navigation' %}
-            {% include JB/pages_list %}
-          </ul>
-          <form class="navbar-form navbar-right" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
-        </div><!-- /.navbar-collapse -->
-      </nav>
+          <!-- NAVBAR
+          ================================================== -->
+          <div class="navbar-wrapper">
+            <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+            <div class="container">
 
-      <div class="container">
-        {{ content }}
-      </div>
+              <div class="navbar navbar-inverse">
+                <div class="navbar-inner">
+                  <!-- Responsive Navbar Part 1: Button for triggering responsive navbar. Include responsive CSS to utilize. -->
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </a>
+                  <a class="brand" href="#"><!-- <img src="assets/images/logo.png" class="logo" /> --></a>
+                  <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+                  <div class="nav-collapse collapse">
+                    <ul class="nav">
+                      <li class="active"><a href="#">Home</a></li>
+                      <li><a href="#projects">Projects</a></li>
+                      <li><a href="#contact">Contact</a></li>
+                      <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
+                      <li class="dropdown" id="menu1">
+                        <a href="#menu1" class="dropdown-toggle" data-toggle="dropdown">
+                          Resources
+                          <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a href="http://www.meetup.com/Code-for-Dayton/">
+                              <i class=icon-user icon-white></i>
+                              Our Gatherings on Meetup</a>
+                            </li>
+                            <li>
+                              <a href="https://github.com/codefordayton">
+                                <i class=icon-wrench icon-white></i>
+                                Our Code on GitHub</a>
+                              </li>
+                              <li>
+                                <a href="http://codefordayton.uservoice.com/">
+                                  <i class=icon-thumbs-up icon-white></i>
+                                  Idea List for Civic Apps and Open Data</a>
+                                </li>
 
+                                <li class="divider"></li>
+
+                                <li>
+                                  <a href="https://twitter.com/search?q=%23cfabrigade">
+                                    <i class=icon-retweet icon-white></i>
+                                    #cfabrigade - National Tweets</a>
+                                  </li>
+                                  <li>
+                                    <a href="http://codeforamerica.tumblr.com/">
+                                      <i class=icon-bullhorn icon-white></i>
+                                      Brigade's Tumblr</a>
+                                    </li>
+
+                                  </ul>
+                                </li>
+                                <li>            <a href="https://secure.codeforamerica.org/page/contribute/default?custom1=Please%20send%20to%20Code%20for%20Dayton"><button type="button" class="btn btn-default btn-sm" style="margin: 0px;"><i class=icon-heart></i> Donate</button></a></li>
+                              </ul>
+                            </div><!--/.nav-collapse -->
+                          </div><!-- /.navbar-inner -->
+                        </div><!-- /.navbar -->
+
+                      </div> <!-- /.container -->
+                    </div><!-- /.navbar-wrapper -->
+
+  <!-- fork me banner, top right
+  ================================================== -->
+
+  <a class="forkme" href="https://github.com/codefordayton/codefordayton.github.io"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 100;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+
+    <div class="container">
+      {{ content }}
     </div>
 
-    <div id="footer">
-      <div class="container">
-        <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
-          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
-          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
-        </p>
-      </div>
-    </div id="footer">
+  </div>
 
-    {% include JB/analytics %}
+  <div id="footer">
+    <div class="container">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
+        with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>,
+        <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>, and <a href="http://thenounproject.com">The Noun Project</a>.
+      </p>
+    </div>
+  </div id="footer">
+</div>
+  {% include JB/analytics %}
 
 
-    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="{{ ASSET_PATH }}/bootstrap/js/bootstrap.min.js"></script>
-  </body>
+  <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="{{ ASSET_PATH }}/bootstrap/js/bootstrap.min.js"></script>
+  <script src="{{ ASSET_PATH }}/bootstrap/js/bootstrap-tooltip.js"></script>
+   <script src="{{ ASSET_PATH }}/bootstrap/js/bootstrap-image-gallery.min.js"></script>
+</body>
 </html>
