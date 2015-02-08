@@ -138,6 +138,13 @@
       margin-left: 10px;
       margin-right: 10px;
     }
+    .marketing .span6 {
+      text-align: center;
+    }
+    .marketing .span6 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
 
 
     /* Featurettes
