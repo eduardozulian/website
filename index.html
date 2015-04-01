@@ -1,214 +1,169 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8">
-    <title>Code for Curitiba | A Code for America Brigade</title>
-    <meta name="description" content="Cidadãos de Curitiba pensando e criando soluções para cidadãos de Curitiba.">
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="utf-8">
+        <title>Code for Curitiba | A Code for America Brigade</title>
+        <meta name="description" content="Cidadãos de Curitiba pensando e criando soluções para cidadãos de Curitiba.">
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="assets/css/style.css" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-<style>
-.memberbox{margin-top:15px; margin-bottom:10px;}
-.memberbox h2{color:#aaa; font-size:150%; margin-bottom:0}
-.carousel-caption .pix-thumb{position:relative; min-width:45px; margin-right:5px; border-radius:6px; width:45px; height:45px; background-image: url(./assets/images/captain.png); background-size: 100% 100%;}
-.membercheckin{margin-top:20px; color:#fff}
-.carousel-caption{margin-top:100px}
-.tip{display:inline-block; position:relative}
-</style>
-  </head>
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <style>
+        .memberbox{margin-top:15px; margin-bottom:10px;}
+        .memberbox h2{color:#aaa; font-size:150%; margin-bottom:0}
+        .carousel-caption .pix-thumb{position:relative; min-width:45px; margin-right:5px; border-radius:6px; width:45px; height:45px; background-image: url(./assets/images/captain.png); background-size: 100% 100%;}
+        .membercheckin{margin-top:20px; color:#fff}
+        .carousel-caption{margin-top:100px}
+        .tip{display:inline-block; position:relative}
+        </style>
+    </head>
 
-  <body>
+    <body>
 
     <!-- NAVBAR
     ================================================== -->
-    <div class="navbar-wrapper">
-      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
-      <div class="container">
+        <div class="navbar-wrapper">
+            <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+            <div class="container">
+                <div class="navbar navbar-inverse">
+                    <div class="navbar-inner">
+                        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar. Include responsive CSS to utilize. -->
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="#"><img src="assets/images/logo.png" class="logo" /></a>
+                        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+                        <div class="nav-collapse collapse">
+                            <ul class="nav">
+                                <li class="active"><a href="#">Home</a></li>
+                                <li><a href="#projetos">Projetos</a></li>
+                                <li><a href="#parceiros">Parceiros</a></li>
+                                <li><a href="#contato">Contato</a></li>
+                                <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
+                                <li class="dropdown" id="menu1">
+                                    <a href="#menu1" class="dropdown-toggle" data-toggle="dropdown">
+                                        Recursos/Ferramentas <!-- TODO: Decidir qual usar -->
+                                        <b class="caret"></b>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="http://www.meetup.com/OpenBrazil/">
+                                                <i class=icon-user icon-white></i>
+                                                Nossas Reuniões no Meetup</a>
+                                        </li>
+                                        <li>
+                                            <a href="github.com/CodeForCuritiba">
+                                                <i class=icon-wrench icon-white></i>
+                                                Nossos Projetos no GitHub</a>
+                                        </li>
+                                        <!-- TO IMPLEMENT -->
+                                        <!-- <li>
+                                            <a href="http://codefordayton.uservoice.com/">
+                                                <i class=icon-thumbs-up icon-white></i>
+                                                Idea List for Civic Apps and Open Data</a>
+                                        </li> -->
+                                        <!-- TO IMPLEMENT -->
+                                        <!-- <li>
+                                            <a href="https://github.com/codefordayton/codeofconduct">
+                                                <i class=icon-cog icon-white></i>
+                                                Code of Conduct</a>
+                                        </li> -->
 
-        <div class="navbar navbar-inverse">
-          <div class="navbar-inner">
-            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar. Include responsive CSS to utilize. -->
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </a>
-            <a class="brand" href="#"><img src="assets/images/logo.png" class="logo" /></a>
-            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-            <div class="nav-collapse collapse">
-              <ul class="nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#parceiros">Parceiros</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
-                <li class="dropdown" id="menu1">
-                  <a href="#menu1" class="dropdown-toggle" data-toggle="dropdown">
-                    Recursos/Ferramentas <!-- TODO: Decidir qual usar -->
-                    <b class="caret"></b>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a href="http://www.meetup.com/OpenBrazil/">
-                        <i class=icon-user icon-white></i>
-                        Nossas Reuniões no Meetup</a>
-                    </li>
-                    <li>
-                      <a href="github.com/CodeForCuritiba">
-                        <i class=icon-wrench icon-white></i>
-                        Nossos Projetos no GitHub</a>
-                    </li>
-                    <!-- TO IMPLEMENT -->
-                    <!-- <li>
-                      <a href="http://codefordayton.uservoice.com/">
-                      <i class=icon-thumbs-up icon-white></i>
-                      Idea List for Civic Apps and Open Data</a>
-                    </li> -->
-                    <!-- TO IMPLEMENT -->
-                    <!-- <li>
-                      <a href="https://github.com/codefordayton/codeofconduct">
-                      <i class=icon-cog icon-white></i>
-                      Code of Conduct</a>
-                    </li> -->
+                                        <li class="divider"></li>
 
-                    <li class="divider"></li>
-
-                    <li>
-                      <a href="https://twitter.com/search?q=%23CodeForCuritiba">
-                        <i class=icon-retweet icon-white></i>
-                        #CodeForCuritiba Tweets</a>
-                    </li>
-                    <!-- TO IMPLEMENT -->
-                    <!-- <li>
-                      <a href="http://codeforamerica.tumblr.com/">
-                        <i class=icon-bullhorn icon-white></i>
-                        Brigade's Tumblr</a>
-                    </li> -->
-                      
-                  </ul>
-                </li>
-                <!-- Botão donate estava desalinhando o menu -->
-                <!-- <li><a href="https://secure.codeforamerica.org/page/contribute/default?custom1=Please%20send%20to%20Code%20for%20Dayton"><button type="button" class="btn btn-default btn-sm" style="margin: 0px;"><i class=icon-heart></i> Donate</button></a></li> -->
-              </ul>
-            </div><!--/.nav-collapse -->
-          </div><!-- /.navbar-inner -->
-        </div><!-- /.navbar -->
-
-      </div> <!-- /.container -->
-    </div><!-- /.navbar-wrapper -->
-
+                                        <li>
+                                            <a href="https://twitter.com/search?q=%23CodeForCuritiba">
+                                                <i class=icon-retweet icon-white></i>
+                                                #CodeForCuritiba Tweets</a>
+                                        </li>
+                                        <!-- TO IMPLEMENT -->
+                                        <!-- <li>
+                                            <a href="http://codeforamerica.tumblr.com/">
+                                                <i class=icon-bullhorn icon-white></i>
+                                                Brigade's Tumblr</a>
+                                        </li> -->
+                                    </ul>
+                                </li>
+                                <!-- Botão donate estava desalinhando o menu -->
+                                <!-- <li><a href="https://secure.codeforamerica.org/page/contribute/default?custom1=Please%20send%20to%20Code%20for%20Dayton"><button type="button" class="btn btn-default btn-sm" style="margin: 0px;"><i class=icon-heart></i> Donate</button></a></li> -->
+                            </ul>
+                        </div><!--/.nav-collapse -->
+                    </div><!-- /.navbar-inner -->
+                </div><!-- /.navbar -->
+            </div> <!-- /.container -->
+        </div><!-- /.navbar-wrapper -->
 
   <!-- fork me banner, top right
   ================================================== -->
-
-  <a class="forkme" href="https://github.com/CodeForCuritiba/website"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 100;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+    <a class="forkme" href="https://github.com/CodeForCuritiba/website"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 100;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
 
     <!-- Carousel - only using one at the moment
     ================================================== -->
-    <div class="carousel slide">
-      <div class="carousel-inner">
-        <div class="item active">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Nós somos <strong>Code For Curitiba</strong>!</h1>
-              <p class="lead">
-                Cidadãos de Curitiba pensando e criando soluções para cidadãos de Curitiba.
-              </p>
-              <a class="btn btn-large btn-primary" href="http://www.meetup.com/OpenBrazil/">Apareça em nossos encontros</a>
+        <div class="carousel slide">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Nós somos <strong>Code For Curitiba</strong>!</h1>
+                            <p class="lead">
+                                Cidadãos de Curitiba pensando e criando soluções para cidadãos de Curitiba.
+                            </p>
+                            <a class="btn btn-large btn-primary" href="http://www.meetup.com/OpenBrazil/">Apareça em nossos encontros</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div><!-- /.carousel -->
+        </div><!-- /.carousel -->
 
-    
-    
-    <div class="container marketing clearleft">
-
+        <div class="container marketing clearleft">
 
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="span4">
-          <a href="http://www.meetup.com/Code-for-Dayton/"><img src="assets/images/captain.png" alt="CfA Brigade Captain" /></a>
-          <h2>Come To Our Meetups</h2>
-          <p>A casual <a href="http://www.meetup.com/Code-for-Dayton/">meetup</a> where 
-             we work on projects and hack open data.</p>
-        </div><!-- /.span4 -->
-
-        <div class="span4">
-          <a href="https://groups.google.com/a/codeforamerica.org/forum/#!forum/codefordayton"><img src="assets/images/community.png" alt="Community" /></a>
-          <h2>Join Online Discussions</h2>
-          <p>
-            <a href="https://groups.google.com/a/codeforamerica.org/forum/#!forum/codefordayton">An open conversation online</a> about what we're doing now and what's next.</p>
-        </div><!-- /.span4 -->
-
-        <div class="span4">
-          <a href="http://codeforamerica.org/"><img src="assets/images/cfa_logo_greyscale.png" alt="Code for America" /></a>
-          <h2>See Our Inspiration</h2>
-          <p><a href="http://codeforamerica.org/">Code for America</a> is the organization that helped inspire
-            many of us that we can change our City.
-          </p>
-        </div><!-- /.span4 -->
-      </div><!-- /.row -->
-
-
-      <!-- START THE FEATURETTES -->
-
- <hr class="featurette-divider">
-
-      <div id="projects" class="featurette">
-        <h2 class="featurette-heading" style="text-align: center; margin-bottom: 20px;">Works In Progress</h2>
-
-      <div class="row">
-
-                        <div class="span4">
-                    <a href="esl">
-          <img name="collide" id="collide" style="display: block; margin-left: auto; margin-right: auto"src="assets/images/noun_project_icon_11002_easel.png" alt="EASL" />
-        </a>
-                  <h2 style="text-align: center;">English As A Second Language (ESL)</h2>
-        </div><!-- /.span4-->
+            <div class="row">
+                <div class="span4">
+                    <a href="http://www.meetup.com/OpenBrazil/"><img src="assets/images/captain.png" alt="CfA Brigade Captain" /></a>
+                    <h2>Venha a Nossos Encontros</h2>
+                    <p>Um <a href="http://www.meetup.com/OpenBrazil/">encontro</a> onde trabalhamos em projetos abertos utilizando dados abertos.</p>
+                </div>
 
                 <div class="span4">
-                    <a href="/grocer">
-          <img name="grocer" style="display: block; margin-left: auto; margin-right: auto"src="assets/images/noun_project_icon_5260_map.png" alt="Collider Project" />
-        </a>
-                  <h2 style="text-align: center;">Grocer</h2>
-        </div><!-- /.span4-->
-        <div class="span4">
-                   <a href="https://communities.socrata.com/catalog/code-for-dayton/"><img name="portal" style="display: block; margin-left: auto; margin-right: auto"src="assets/images/noun_project_icon_14774_portal.png" alt="Open Data Portal" /></a>
+                    <a href="mailto:lucas@openbrazil.org"><img src="assets/images/community.png" alt="Community" /></a>
+                    <h2>Participe de nossas discussões</h2>
+                    <p><a href="mailto:lucas@openbrazil.org">Discussões online</a> sobre os que estamos fazendo agora e o que faremos a seguir.</p>
+                </div>
 
-                  <h2 style="text-align: center;">Open Data Portal</h2>
-        </div><!-- /.span4 -->
-      </div><!-- /.row -->
-      <div class="row">
-        <div class="span4">
-                   <a href="http://localwiki.net/dayton"><img name="book" style="display: block; margin-left: auto; margin-right: auto"src="assets/images/noun_project_icon_17900_book.png" alt="Dayton Local Wiki" /></a>
+                <div class="span4">
+                    <a href="http://codeforamerica.org/"><img src="assets/images/cfa_logo_greyscale.png" alt="Code for America" /></a>
+                    <h2>Nossa Inspiração</h2>
+                    <p><a href="http://codeforamerica.org/">Code for America</a> é uma organização que inspira muitos de nós a mudar nossas cidades.</p>
+                </div>
+            </div>
 
-                  <h2 style="text-align: center;">Dayton Local Wiki</h2>
-        </div><!-- /.span4 -->
-        <div class="span4">
-                   <a href="http://github.com/codefordayton/daytonreap"><img name="foreclosure" style="display: block; margin-left: auto; margin-right: auto"src="assets/images/noun_project_icon_50539_foreclosure.png" alt="Dayton REAP" /></a>
-                  <h2 style="text-align: center;">Dayton REAP</h2>
-	</div>
-        <div class="span4">
-                   <a href="http://github.com/codefordayton/game"><img name="game" style="display: block; margin-left: auto; margin-right: auto"src="assets/images/noun_project_icon_8609_game.png" alt="Lot Linker" /></a>
-
-                  <h2 style="text-align: center;">The Game</h2>
-        </div><!-- /.span4 -->
-      </div><!-- /.row -->
-    </div><!-- /.featurette -->
+    <!-- START THE FEATURETTES -->
+    <!-- <hr class="featurette-divider">
+    <div id="projects" class="featurette">
+        <h2 class="featurette-heading" style="text-align: center; margin-bottom: 20px;">Works In Progress</h2>
+        <div class="row">
+            <div class="span4">
+                <a href="esl">
+                    <img name="collide" id="collide" style="display: block; margin-left: auto; margin-right: auto"src="assets/images/noun_project_icon_11002_easel.png" alt="EASL" />
+                </a>
+                <h2 style="text-align: center;">English As A Second Language (ESL)</h2>
+            </div>
+        </div>
+    </div> -->
 
   <hr class="featurette-divider">
       <div class="featurette">
